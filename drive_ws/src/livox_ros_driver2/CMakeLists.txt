@@ -335,6 +335,13 @@ else(ROS_EDITION STREQUAL "ROS2")
     ament_lint_auto_find_test_dependencies()
   endif()
 
+  # Install environment hook to add /usr/local/lib to LD_LIBRARY_PATH
+  if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/env_hook/99_livox_library_path.sh")
+    ament_environment_hooks(
+      "${CMAKE_CURRENT_SOURCE_DIR}/env_hook/99_livox_library_path.sh"
+    )
+  endif()
+
   ament_auto_package(INSTALL_TO_SHARE
     config
     launch_ROS2
