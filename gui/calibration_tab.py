@@ -111,7 +111,7 @@ class CalibrationTab(ttk.Frame):
         dir_frame.pack(fill=tk.X, padx=20, pady=10)
         
         ttk.Label(dir_frame, text="Thư mục output:").pack(side=tk.LEFT, padx=5)
-        self.bag_dir_var = tk.StringVar(value="/media/nas/ANHSON/calibration_data/bags")
+        self.bag_dir_var = tk.StringVar(value=str(self.workspace_path / "calibration_data" / "bags"))
         dir_entry = ttk.Entry(dir_frame, textvariable=self.bag_dir_var, width=50)
         dir_entry.pack(side=tk.LEFT, padx=5, fill=tk.X, expand=True)
         
