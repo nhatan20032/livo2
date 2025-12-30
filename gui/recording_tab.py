@@ -79,7 +79,7 @@ class RecordingTab(ttk.Frame):
         dir_frame = ttk.LabelFrame(control_frame, text="Thư mục lưu", padding="10")
         dir_frame.pack(fill=tk.X, padx=10, pady=5)
         
-        self.output_dir_var = tk.StringVar(value=str(self.workspace_path / "recordings"))
+        self.output_dir_var = tk.StringVar(value="/media/nas/ANHSON/recordings")
         dir_entry = ttk.Entry(dir_frame, textvariable=self.output_dir_var, width=60)
         dir_entry.pack(side=tk.LEFT, padx=5, fill=tk.X, expand=True)
         
